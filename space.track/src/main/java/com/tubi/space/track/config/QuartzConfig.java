@@ -6,7 +6,6 @@ import org.quartz.JobDetail;
 import org.quartz.SimpleScheduleBuilder;
 import org.quartz.Trigger;
 import org.quartz.TriggerBuilder;
-import org.springframework.batch.core.configuration.JobLocator;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,11 +16,9 @@ import com.tubi.space.track.quartz.QuartzJobLauncher;
 public class QuartzConfig {
 	
 	@Bean
-	public JobDetail jobDetail(JobLauncher jobLauncher, JobLocator jobLocator) {
+	public JobDetail jobDetail(JobLauncher jobLauncher) {
 		JobDataMap map = new JobDataMap();
-		map.put("jobName", "DFJ_etl");
 		map.put("jobLauncher", jobLauncher);
-		map.put("jobLocator", jobLocator);
 		
 		return JobBuilder.newJob()
 				.ofType(QuartzJobLauncher.class)
