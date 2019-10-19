@@ -1,0 +1,66 @@
+<style>
+    #header {
+      background: black;
+    }
+
+    .row {
+      margin-right: 0!important;
+      margin-left: 0!important;
+    }
+
+    .all-nav-items {
+      margin:0;
+      padding:0;
+      margin-top:20px;
+    }
+
+    .nav-item {
+      display:inline-block;
+    }
+
+    .nav-item a {
+      display: inline-block;
+      padding: 20px 35px;
+    }
+
+    .nav-logo {
+      width: 125%;
+    }
+
+    .center {
+      text-align:center;
+    }
+
+    .nav-item-link {
+      color: white!important;
+      cursor: pointer;
+    }
+
+    .nav-item-link:hover {
+      color: white!important;
+      cursor: pointer;
+      background:#15418c;
+      text-decoration:none!important;
+    }
+
+    .active {
+      background:#15418c;
+      cursor:auto!important;
+    }
+</style>
+
+<div id="header">
+  <div class="row">
+    <div class="col-md-1 center">
+        <img class="nav-logo" src="assets/images/nasa-logo.svg">
+    </div>
+
+    <div class="col-md-8">
+      <ul class="all-nav-items">
+        <li class="nav-item" *ngFor="let row of rowLinks">
+            <a class="nav-item-link" routerLink="{{row.href}}" [routerLinkActive]="['active']">{{row.name}}</a>
+        </li>
+       </ul>
+    </div>
+  </div>
+</div>
