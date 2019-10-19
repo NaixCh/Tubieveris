@@ -35,7 +35,7 @@ public class QuartzConfig {
 	    		.forJob(job)
 	    		.withIdentity("DFJ_Trigger")
 	    		.withDescription("Triggers the quartz job every hour")
-	    		.withSchedule(SimpleScheduleBuilder.repeatHourlyForever())
+	    		.withSchedule(SimpleScheduleBuilder.repeatHourlyForever(24))
 	    		.build();
 	}
 }

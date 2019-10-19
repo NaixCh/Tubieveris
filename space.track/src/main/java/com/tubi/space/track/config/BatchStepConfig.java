@@ -10,6 +10,7 @@ import org.springframework.batch.item.database.builder.JdbcBatchItemWriterBuilde
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.tubi.space.track.batch.OverwriteListener;
 import com.tubi.space.track.batch.Processor;
 import com.tubi.space.track.batch.RestItemReader;
 import com.tubi.space.track.domain.Debris;
@@ -33,12 +34,14 @@ public class BatchStepConfig {
 	@Bean
 	Step step(StepBuilderFactory stepBuilder,
 			JdbcBatchItemWriter<Debris> writer,
-			RestConfig config) {
+			RestConfig config,
+			OverwriteListener listener) {
 		return stepBuilder.get("DFJ_etl_step")
 				.<Satellite, Debris>chunk(100)
 				.reader(new RestItemReader(config))
 				.processor(new Processor())
 				.writer(writer)
+				.listener(listener)
 				.build();
 	}
 }
