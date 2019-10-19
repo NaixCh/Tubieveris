@@ -8,4 +8,7 @@ public class Debris {
 	private String objectName;
 	private String raOfAscNode;
 	private String meanMotion;
+	private String type;
+	private String size;
+	private String scale;
 }
