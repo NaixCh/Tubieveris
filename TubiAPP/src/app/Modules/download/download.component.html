@@ -1,1 +1,56 @@
-<p>download works!</p>
+<style>
+  #download {
+    background: black;
+    color: white;
+  }
+  .center {
+    text-align:center;
+  }
+
+  .colorBlue {
+    color:#15418c!important;
+  }
+
+  #download a:hover {
+  
+  }
+
+  #download p {
+    padding-bottom: 1rem;
+    margin:0!important;
+  }
+
+  #carrouselImage {
+    max-width: 865px;
+    margin: auto;
+  }
+
+  .divSlider {
+    overflow: hidden;
+    /* border: 2px solid #15418c; */
+    padding: 15px;
+  }
+
+  .imgSlider {
+    width:100%;
+  }
+
+</style>
+
+
+<div id="download">
+  <h1 class="center colorBlue" style="text-align:center;">DESCARGA</h1>
+  <p class="center">Desde esta seccion podras descargarte el juego y jugar todas las veces que quieras.</p>
+  <p class="center">Tambien tendras acceso a tdo el codigo desde el repositorio de <a href="https://github.com/NaixCh/Tubieveris" target="_blank">GitHub.</a></p>
+  <p class="center"><a target="_blank" href="https://www.google.es/">Enlace Descarga</a></p>
+  <p class="center">Si hay alguna duda/problema no dudes en escribirnos en <a href="mailto:tubieveris@gmail.com">tubieveris@gmail.com</a></p>
+
+  <div id="carrouselImage">
+      <div class="row">
+          <div *ngFor="let image of imagelist" class="col-md-3 divSlider">
+            <img class="imgSlider" src="{{pathImage}}{{image}}">
+          </div>
+      </div>
+  </div>
+
+</div>
