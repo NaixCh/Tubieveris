@@ -1,1 +1,51 @@
-<p>wiki works!</p>
+<style>
+  #wiki {
+    background: black;
+    color:white;
+  }
+
+  .center {
+    text-align:center;
+  }
+
+  .colorBlue {
+    color:#15418c!important;
+  }
+
+  .wikiStyle {
+    width: 865px;
+    margin: auto;
+  }
+
+  .iconAcordeon {
+    float: right;
+    margin: -3px;
+  }
+
+  .hidden {
+    display:none;
+  }
+
+  .allAcordeonTitle{
+    padding: 8px;
+    margin: 8px;
+    border: 2px solid #15418c;
+    border-radius: 5px;
+  }
+
+</style>
+
+
+<div id="wiki">
+  <h1 class="center colorBlue" style="text-align:center;">WIKI</h1>
+
+  <div class="wikiStyle">
+    <ng-container *ngFor="let item of questionAndAnwers; let i = index" >
+      <div (click)="openAccordion(item.icon , i)" class="allAcordeonTitle">
+        {{item.titleAcordeon}}<img class="iconAcordeon" src="{{pathImage}}{{item.icon}}">
+      </div>
+    </ng-container>
+  </div>
+
+
+</div>
