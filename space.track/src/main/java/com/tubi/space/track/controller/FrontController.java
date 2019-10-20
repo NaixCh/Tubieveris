@@ -40,6 +40,7 @@ public class FrontController {
             debris.setType(rs.getString("TYPE"));
             debris.setSize(rs.getString("SIZE"));
             debris.setScale(rs.getString("SCALE"));
+            debris.setInclination(rs.getFloat("INCLINATION"));
             return debris;
         }
     }

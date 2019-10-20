@@ -28,6 +28,7 @@ public class Processor implements ItemProcessor<Satellite, Debris> {
 		debris.setType(Utils.calculateType(type).toString());
 		debris.setSize(Utils.calculateSize(size).toString());
 		debris.setScale(String.valueOf(Utils.randomizeScale()));
+		debris.setInclination(Float.parseFloat(item.getINCLINATION()));
 		return debris;
 	}
 

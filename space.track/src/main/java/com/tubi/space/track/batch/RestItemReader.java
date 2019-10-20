@@ -51,6 +51,7 @@ public class RestItemReader implements ItemReader<Satellite> {
 			data.setOBJECT_NAME(jsonObject.getString("OBJECT_NAME"));
 			data.setRA_OF_ASC_NODE(jsonObject.getString("RA_OF_ASC_NODE"));
 			data.setMEAN_MOTION(jsonObject.getString("MEAN_MOTION"));
+			data.setINCLINATION(jsonObject.getString("INCLINATION"));
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}

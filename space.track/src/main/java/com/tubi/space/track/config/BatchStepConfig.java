@@ -22,7 +22,7 @@ import com.tubi.space.track.domain.Satellite;
 @EnableBatchProcessing
 public class BatchStepConfig {
 	
-	private static final String QUERY = "INSERT INTO DEBRIS (OBJECT_ID, OBJECT_NAME, RA_OF_ASC_NODE, MEAN_MOTION, TYPE, SIZE, SCALE) VALUES (:objectId, :objectName, :raOfAscNode, :meanMotion, :type, :size, :scale)";
+	private static final String QUERY = "INSERT INTO DEBRIS (OBJECT_ID, OBJECT_NAME, RA_OF_ASC_NODE, MEAN_MOTION, TYPE, SIZE, SCALE, INCLINATION) VALUES (:objectId, :objectName, :raOfAscNode, :meanMotion, :type, :size, :scale, :inclination)";
 	
 	@Bean
 	JdbcBatchItemWriter<Debris> jdbcWriter(DataSource datasource) {

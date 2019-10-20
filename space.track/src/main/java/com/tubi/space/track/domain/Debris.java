@@ -13,4 +13,5 @@ public class Debris implements Serializable{
 	private String type;
 	private String size;
 	private String scale;
+	private Float inclination;
 }
