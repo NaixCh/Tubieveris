@@ -10,9 +10,10 @@ import lombok.Data;
 @Data
 @Configuration
 public class GameConfig {
-	@Value("#{${game.percent.size:null}}")
+	
+	@Value("#{${game.percents.size:null}}")
 	private Map<String, String> size;
 
-	@Value("#{${game.percent.type:null}}")
+	@Value("#{${game.percents.type:null}}")
 	private Map<String, String> type;
 }

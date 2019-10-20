@@ -34,7 +34,7 @@ public class FrontController {
 	
 	
 	private class DebrisMapper implements RowMapper<Debris> {
-        public Debris mapRow(ResultSet rs, int rowNum) throws SQLException         {
+        public Debris mapRow(ResultSet rs, int rowNum) throws SQLException {
             Debris debris = new Debris();
             return debris;
         }

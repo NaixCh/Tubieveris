@@ -9,20 +9,19 @@ import com.tubi.space.track.domain.Satellite;
 import com.tubi.space.track.utils.Utils;
 
 public class Processor implements ItemProcessor<Satellite, Debris> {
-	
-	private long counter = 0;
-	
+		
 	@Autowired
 	private GameConfig config;
 
 	@Override
 	public Debris process(Satellite item) throws Exception {
-		counter++;
 		Debris debris = new Debris();
 		debris.setObjectId(item.getOBJECT_ID());
 		debris.setObjectName(item.getOBJECT_NAME());
 		debris.setRaOfAscNode(item.getRA_OF_ASC_NODE());
-		debris.setMeanMotion(item.getMEAN_MOTION());
+		debris.setMeanMotion(item.getMEAN_MOTION());		
+		debris.setType(Utils.calculateType(config.getType()).toString());
+		debris.setSize(Utils.calculateSize(config.getSize()).toString());
 		debris.setScale(String.valueOf(Utils.randomizeScale()));
 		return debris;
 	}
