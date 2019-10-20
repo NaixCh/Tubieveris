@@ -1,1 +1,36 @@
-<p>nuestro-proyecto works!</p>
+<div class="set-background" style="height:100%;">
+    <div class="main-width" style="margin-top: 5%; text-align: justify; margin-bottom: 30px;">
+        <p class="lead">El comandante Tubilleja ha sido elegido para dirigir la primera misión de recolección espacial. Deberá dirigir el dron <i>tub-1</i> encargado de recoger todos los residuos que pueda y llevarlos a la estación espacial para estudiarlos y reciclarlos.</p>
+        <p class="lead">En el juego deberás mantener tu dron cerca de los objetos mientras se recolectan y volver a la estación espacial antes de quedarte sin combustible. En cada visita a la estacion espacial, obtendrás puntos y recargarás tu combustible, pero la dificultad del juego aumentará. </p>
+        <hr class="my-4">
+        <h1>Nuestra idea</h1>
+        <iframe style="float: left; margin-right: 30px;" width="560" height="315" src="https://www.youtube.com/embed/oYVeeSyJ-vI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p class="lead">El juego completo si tuviesemos mas tiempo de desarrollo, consistiría en recoger varios tipos de objetos con diferentes tamaños. Cada objeto entregaría un tipo de recurso (puntos, materiales, logros...) los objetos mas grandes requerirían alguna interación antes de poder ser recogidos, por ejemplo partirlos, y para poder llevar a cabo estas acciones tendrías que ir mejorando tu nave.</p>
+        <p class="lead">Cruzando los datos de los tle de space-tracker con otras fuentes de datos que nos permitiesen identificar a que satelite pertence un objeto, lrecoger suficientes piezas de un satélite concreto, te permitiría restaurar estos satélites obteniendo ventajas al estar cerca de ellos, pero pueden ser destruidos por la de basura.</p>
+        <hr class="my-4">
+        <h1>Como usamos los datos de space-track</h1>
+        <p class="lead">Obtenemos los datos de la API de space-track. Una API que organiza y sirve datos sobre las órbitas de los objetos que orbitan la tierra.</p>
+        <p class="lead">Realizamos una llamada filtrando para obtener solo los objetos considerados basura espacial y recibimos los datos en TLE (Two-line elements). Un estandar que entrega algunos datos sobre un objeto espacial y todos los parámetors necesarios para describir su órbita.</p>
+        <p class="lead">Como nuestro proyecto es un videojuego divulgativo, hemos tenido que hacer transformaciones en las órbitas de estos objetos. Han sido normalizadas para ser circulares en lugar de elípticas, y la altitud se ha modificado para que todas se encuentren a la misma distancia del centro de la tierra todo el tiempo, facilitando calcular las colisiones con la nave. Tambien se ha añadido una pequeña variación en el centro de gravidad sobre el que orbita cada objeto para añadir variedad a las órbitas.</p>
+        <hr class="my-4">
+        <h1>Arquitectura de la aplicación</h1>
+        <img src="assets/images/applicationDiagram.png" alt="Application Diagram" style="float: right; width: 450px ;margin-left: 30px; padding: 25px; background: white;">
+        <h4>Backend Service</h4>
+        <p class="lead">El backend de la aplicación tiene dos funciones principales. Solicitar los datos a la API de Space-track, transformarlos en objetos que el juego pueda interpretar y guardarlos en la base de datos. Esto lo hace mediante un proceso quartz que actualiza los datos una vez al día.
+            Y exponer un API REST al que llamaremos desde el juego para recuperar estos objetos, que luego se utilizarán para generar las órbitas.
+        </p>
+        <h4>Unity</h4>
+        <p class="lead">El juego como tal, se almacena como archivos estáticos y recoge todos los datos necesarios de la llamada al backend.
+        </p>
+        <h4>FrontEnd</h4>
+        <p class="lead">Utilizamos una aplicación Angular para generar la web y embeber el juego en Unity
+        </p>
+        <h4>Backend Service</h4>
+        <p class="lead">Usamos los servicios de AWS para desplegar la aplicación. Ec2 para el backend, RDS para la base de datos, y S3 para los archivos estáticos.</p>
+        <hr class="my-4">
+        <hr class="my-4">
+    
+    </div>
+
+
+</div>
