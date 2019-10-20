@@ -1,3 +1,8 @@
 #footer{
     border-top: none!important;
 }
+
+.game-window-class{
+    margin-top: 3%!important; 
+    margin-bottom: 2%!important;
+}
