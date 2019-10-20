@@ -24,3 +24,4 @@ hs_err_pid*
 /.metadata/
 TubiAPP/node_modules
 TubiAPP/.vs
+.DS_Store
