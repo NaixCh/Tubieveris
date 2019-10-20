@@ -1,8 +1,29 @@
-.jumboclass {
-    padding-left: 20%;
-    padding-right: 20%;
+#myVideo{
+    z-index: 1;
+    width: 100%;
+    position: absolute;
 }
 
-.jumbotron {
-    margin-bottom: 0;
+.main-container{
+    z-index: 5;
+    position: absolute;
+    width: 100%;
+}
+
+.main-title{
+    font-size: 100px;
+}
+
+#fademe{
+    opacity:0;
+    transition:2s;
+}
+
+.title-container{
+    text-align: center;
+    margin-top: 6%;
+}
+
+#footer{
+    border-top: 1px solid white;
 }

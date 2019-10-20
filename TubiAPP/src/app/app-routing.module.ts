@@ -5,6 +5,7 @@ import { GameComponent } from './Modules/game/game.component';
 import { WikiComponent } from './Modules/wiki/wiki.component';
 import { DownloadComponent } from './Modules/download/download.component';
 import { InicioComponent } from './Modules/inicio/inicio.component';
+import { NuestroProyectoComponent } from './Modules/nuestro-proyecto/nuestro-proyecto.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'demo', component: GameComponent },
   { path: 'descarga', component: DownloadComponent },
   { path: 'wiki', component: WikiComponent },
+  { path: 'nuestro-proyecto', component: NuestroProyectoComponent },
   { path: '**', component: InicioComponent }
 
 ];

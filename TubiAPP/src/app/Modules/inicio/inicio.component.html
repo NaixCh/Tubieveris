@@ -1,10 +1,40 @@
-<div class="jumbotron">
-    <h1>Nuestro equipo <img src="assets/images/space_rocket.png" alt="Space rocket" width="4%"></h1>
-    <p class="lead">Somos un grupo de programadores que se encuentran interesados acerca del estado orbital de la Tierra concretamente. No nos interesa que existan escombros espaciales alrededor de la Tierra para estobar a los satélites realmente útiles, a nadie le gustaría eso (o debería).</p>
-    <hr class="my-4">
-    <p>Para ello dedicaremos esta plataforma web a informar a la sociedad de la importancia de los escombros que quedan desperdigados por el espacio. No solo eso si no que presentaremos un videojuego dedicado a la recolección de los distintos tipos de elementos inútiles alrededor de la Tierra.</p>
-    <p class="lead">
-        <a class="btn btn-primary btn-lg" routerLink="/demo" role="button">Mirar demo</a>
-    </p>
+<div class="set-background" style="height:100%;">
+    <video autoplay muted loop id="myVideo">
+        <source src="assets/planetaDemo.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    <div class="main-container">
+        <div class="title-container">
+            <h1 class="main-title">Space Collectors</h1>
+            <h3 class="main-subtitle">El videojuego</h3>
+            <a class="nav-item-link" routerLink="/demo" [routerLinkActive]="['active']"><button style="margin-top: 40px; margin-bottom: 10%;">Prueba nuestra demo</button></a>
+        </div>
+        <div class="main-width">
+            <h1><img src="assets/images/spaceScrap.png" alt="Planet Scrap" width="6%" style="margin-right:15px;">¿Qué es la basura espacial?</h1>
+            <p class="lead">La basura espacial es el conjunto de objetos inutiles que orbitan la tierra. Originalmente designaba pequeños objetos naturales, como meteoroides o cometas, pero con el ascenso de la carrera espacial cada vez son más los residuos generados por el ser humano.</p>
+            <p class="lead">Se han detectado y clasificado cerca de 15000 objetos que se consideran basura espacial, pero se estima que existen cerca de 24000 objetos mayores a 10cm, y alrededor de 900000 piezas menores a 10 cm.</p>
+            <hr class="my-4">
+
+            <h1><img src="assets/images/sickearth.png" alt="Space rocket" width="5%" style="margin-right:30px;">¿Por qué es peligrosa?</h1>
+            <p class="lead">Existen principalmente dos problemas con la basura espacial. Comparando el tamaño de estos objetos con el tamaño de la tierra, 24000 objetos no son tantos debería haber suficiente espacio. Pero la gravedad hace que las orbitas de estos objetos sean muy similares haciendo estos choques mas probables.</p>
+            <img src="assets/images/aluminiumcrash.jpg" alt="Aluminium Crash" style="float: right; max-width: 400px;margin-left: 30px;">
+            <p class="lead">Desde 1991 se han registrado 3 choques entre los residuos que orbitan la tierra. Estos choques son mas frecuentes cuanta más basura orbital haya. Se calcula que para dentro de dos siglos se deberían producir 18 choques al año.</p>
+            <p class="lead">En la imagen se puede ver el efecto de una pieza de plástico de 14 gramos, al chocar contra un bloque macizo de alumio a 24000 km por hora.</p>
+            <p class="lead">El "cráter" en realidad tiene unos 12 centímetros de diámetro pero ha sido provocado por un objeto del tamaño de una abeja.</p>
+            <p class="lead">Estos choques tan virulentos suponen un peligro para toda la red de satélites que estamos despleguando alrededor de al tierra, pudiendo causar incluso que estos objetos abandonen su orbita y se precipiten hacia la tierra.</p>
+            <hr class="my-4">
+
+            <h1><img src="assets/images/earthsword.png" alt="Space rocket" width="5%" style="margin-right:30px;">¿Qué podemos hacer?</h1>
+            <p class="lead">Nuestra única solucion es recoger la basura. Además no solo debemos hacerlo por la seguridad de los satélites y las misiones espaciales, sino que se pude obtener un beneficio.</p>
+            <p class="lead">Lo más costoso en un despliegue espacial, es sacar los objetos de la tierra, una vez escapas de la gravedad, los costes para mover cargas son mucho más bajos. Reciclando materiales que ya se encuentran en orbita las costes de la exploración espacial serían mucho mas bajos. </p>
+            <p class="lead">Podéis ver este video que habla sobre el tema, y nos ha servido de inspiración para el proyecto.</p>
+            <hr class="my-4">
+            <div style="width:100%; max-width: 1120px; margin:auto; margin-bottom: 45px;">
+                <iframe width="1120" height="630" src="https://www.youtube.com/embed/itdYS9XF4a0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <app-footer></app-footer>
+    </div>
+
+    
 </div>
-<img src="assets/images/team_photo.jpeg" alt="Team Photo" width="100%">

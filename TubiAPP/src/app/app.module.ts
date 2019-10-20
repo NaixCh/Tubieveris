@@ -10,6 +10,7 @@ import { InicioComponent } from './Modules/inicio/inicio.component';
 import { WikiComponent } from './Modules/wiki/wiki.component';
 import { DownloadComponent } from './Modules/download/download.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NuestroProyectoComponent } from './Modules/nuestro-proyecto/nuestro-proyecto.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FooterComponent,
     InicioComponent,
     WikiComponent,
-    DownloadComponent
+    DownloadComponent,
+    NuestroProyectoComponent
   ],
   imports: [
     BrowserModule,

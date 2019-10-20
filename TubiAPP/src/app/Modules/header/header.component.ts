@@ -12,23 +12,23 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
   this.rowLinks = [
-							      {
-								      name: 'INICIO',
-								      href: '/inicio'
-							      },
-							      {
-								      name: 'DEMO',
-								      href: '/demo'
-							      },
-							      {
-								      name: 'DESCARGA',
-								      href: '/descarga'
-							      },
-							      {
-								      name: 'WIKI',
-								      href: '/wiki'
-							      }
-						      ]
+					{
+						name: 'INICIO',
+						href: '/inicio'
+					},
+					{
+						name: 'NUESTRO PROYECTO',
+						href: '/nuestro-proyecto'
+					},
+					{
+						name: 'DEMO',
+						href: '/demo'
+					},
+					{
+						name: 'DESCARGA',
+						href: '/descarga'
+					}
+				]
   }
 
 }

@@ -1,3 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~material-design-icons/iconfont/material-icons.css';
 
+
+.main-width{
+    max-width: 1250px;
+    margin-left:auto!important;
+    margin-right: auto!important;
+}
+
+.set-background, body{
+    background: black!important;
+    color: white;
+}
+
+button{
+    cursor: pointer;
+    background:#15418c;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px!important;
+}
+
+button:hover{
+    background:white;
+    color: #15418c;
+}
