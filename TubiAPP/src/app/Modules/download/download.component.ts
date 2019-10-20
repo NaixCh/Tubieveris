@@ -14,14 +14,10 @@ export class DownloadComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.imagelist = [ 'imagen1.png',
-                       'imagen2.jpg',
-                       'imagen3.jpg',
-                       'imagen1.png',
-                       'imagen2.jpg',
-                       'imagen3.jpg',
-                       'imagen1.png',
-                       'imagen2.jpg'
+    this.imagelist = [ 'Imagen1.PNG',
+                       'Imagen2.PNG',
+                       'Imagen3.PNG',
+                       'Imagen4.PNG'
 						      ];
 
 
