@@ -1,5 +1,7 @@
 package com.tubi.space.track.config;
 
+import java.util.Map;
+
 import javax.sql.DataSource;
 
 import org.springframework.batch.core.Step;
@@ -32,14 +34,20 @@ public class BatchStepConfig {
 	}
 	
 	@Bean
+	Processor processor(Map<String, String> size, Map<String, String> type) {
+		return new Processor(size, type);
+	}
+	
+	@Bean
 	Step step(StepBuilderFactory stepBuilder,
+			Processor processor,
 			JdbcBatchItemWriter<Debris> writer,
 			RestConfig config,
 			OverwriteListener listener) {
 		return stepBuilder.get("DFJ_etl_step")
 				.<Satellite, Debris>chunk(100)
 				.reader(new RestItemReader(config))
-				.processor(new Processor())
+				.processor(processor)
 				.writer(writer)
 				.listener(listener)
 				.build();
