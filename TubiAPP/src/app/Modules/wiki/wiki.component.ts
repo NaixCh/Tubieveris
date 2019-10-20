@@ -14,31 +14,40 @@ export class WikiComponent implements OnInit {
 
   ngOnInit() {
       this.questionAndAnwers = [{
-        titleAcordeon: '¿Qué es el Idufir? ',
+        titleAcordeon: 'Elementos ',
         icon: 'plus.png',
-        ocultar : 'hide',
-        elementTitle1: '',
-        elementDescripcion1: '',
+        ocultar : 'hidden',
+        open : '',
+        elementTitle1: 'Gasolina',
+        elementDescripcion1: 'Elementos espaciales que sirven para aguantar mas en el juego',
         elementTitle2: '',
-        elementDescripcion2: ''
+        elementDescripcion2: '',
+        elementTitle3: '',
+        elementDescripcion3: ''
       },
       {
-        titleAcordeon: '¿Qué es el Idufir? ',
+        titleAcordeon: 'PowerUp ',
         icon: 'plus.png',
-        ocultar : 'hide',
-        elementTitle1: '',
-        elementDescripcion1: '',
+        ocultar : 'hidden',
+        open : '',
+        elementTitle1: 'Laser',
+        elementDescripcion1: 'el mega laser destructor',
         elementTitle2: '',
-        elementDescripcion2: ''
+        elementDescripcion2: '',
+        elementTitle3: '',
+        elementDescripcion3: ''
       },
       {
-        titleAcordeon: '¿Qué es el Idufir? ',
+        titleAcordeon: 'Mr.Tubilleja ',
         icon: 'plus.png',
-        ocultar : 'hide',
-        elementTitle1: '',
-        elementDescripcion1: '',
+        ocultar : 'hidden',
+        open : '',
+        elementTitle1: 'Tubilleja',
+        elementDescripcion1: 'Comandante espacial de la nave',
         elementTitle2: '',
-        elementDescripcion2: ''
+        elementDescripcion2: '',
+        elementTitle3: '',
+        elementDescripcion3: ''
       }
     ];
   }
@@ -48,10 +57,12 @@ export class WikiComponent implements OnInit {
       console.log("abrir");
       this.questionAndAnwers[e].ocultar = '';
       this.questionAndAnwers[e].icon = 'minus.png';
+      this.questionAndAnwers[e].open = 'openedAcordion';
     } else {
       console.log("cerrar");
       this.questionAndAnwers[e].ocultar = 'hidden';
       this.questionAndAnwers[e].icon = 'plus.png';
+      this.questionAndAnwers[e].open = '';
     }
   }
 
