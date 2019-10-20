@@ -25,20 +25,17 @@ public class FrontController {
 	@GetMapping("/getItems")
 	@ResponseBody
 	public List<Map<String, Object>> getItems() {
-		
 		JdbcTemplate template = new JdbcTemplate(datasource);
 		String SQLQuery = "SELECT * from DEBRIS";
 		return template.queryForList(SQLQuery, new DebrisMapper());
-    
 	}
 	
 	
 	private class DebrisMapper implements RowMapper<Debris> {
-        public Debris mapRow(ResultSet rs, int rowNum) throws SQLException         {
+        public Debris mapRow(ResultSet rs, int rowNum) throws SQLException {
             Debris debris = new Debris();
             return debris;
         }
     }
-
 	
 }

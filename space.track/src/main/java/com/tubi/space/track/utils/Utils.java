@@ -12,21 +12,21 @@ public class Utils {
 	private Utils() {}
 	
 	public static float randomizeScale() {
-		float rangeMin = 0.0f,
+		float rangeMin = 0.8f,
 			rangeMax = 1.0f;		
 	    return rangeMin + (rangeMax - rangeMin) * r.nextFloat();
 	}
 	
 	public TYPE calculateType(HashMap<String, String> items) {
 		final int poolsize = 0;
-		items.entrySet()
+		/*items.entrySet()
 			.stream()
-			.reduce((s1, s2) -> Integer.parseInt(s1.getValue()) + Integer.parseInt(s2.getValue()));
+			.reduce((s1, s2) -> Integer.parseInt(s1.getValue()) + Integer.parseInt(s2.getValue()));*/
 		int percent = r.nextInt(101);
 		
 		
 		
-		return null;
+		return TYPE.AST;
 	}
 	
 }
