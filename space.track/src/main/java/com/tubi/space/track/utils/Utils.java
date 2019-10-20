@@ -17,7 +17,7 @@ public class Utils {
 	private Utils() {}
 	
 	public static float randomizeScale() {
-		float rangeMin = 0.0f,
+		float rangeMin = 0.8f,
 			rangeMax = 1.0f;		
 	    return BigDecimal.valueOf(rangeMin + (rangeMax - rangeMin) * r.nextFloat())
 				.round(new MathContext(2, RoundingMode.HALF_UP))
