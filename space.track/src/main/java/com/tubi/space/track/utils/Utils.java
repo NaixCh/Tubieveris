@@ -1,32 +1,40 @@
 package com.tubi.space.track.utils;
 
-import java.util.HashMap;
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
+import java.util.Map;
 import java.util.Random;
 
-import com.tubi.space.track.constants.TYPE;
+import com.tubi.space.track.constants.Size;
+import com.tubi.space.track.constants.Type;
 
 public class Utils {
 	
 	private static Random r = new Random();
+	private static final int MAX_NUMBER = 101; 
 	
 	private Utils() {}
 	
 	public static float randomizeScale() {
-		float rangeMin = 0.8f,
+		float rangeMin = 0.0f,
 			rangeMax = 1.0f;		
-	    return rangeMin + (rangeMax - rangeMin) * r.nextFloat();
+	    return BigDecimal.valueOf(rangeMin + (rangeMax - rangeMin) * r.nextFloat())
+				.round(new MathContext(2, RoundingMode.HALF_UP))
+				.floatValue();
 	}
 	
-	public TYPE calculateType(HashMap<String, String> items) {
-		final int poolsize = 0;
-		/*items.entrySet()
-			.stream()
-			.reduce((s1, s2) -> Integer.parseInt(s1.getValue()) + Integer.parseInt(s2.getValue()));*/
-		int percent = r.nextInt(101);
-		
-		
-		
-		return TYPE.AST;
+	public static Type calculateType(Map<String, String> items) {
+		int number = r.nextInt(MAX_NUMBER);
+		return (number < Integer.parseInt(items.get(Type.RKT.toString()))) ? Type.RKT 
+				: (number < Integer.parseInt(items.get(Type.RKT.toString())) + 
+						Integer.parseInt(items.get(Type.STT.toString()))) ? Type.STT : Type.AST;
 	}
 	
+	public static Size calculateSize(Map<String, String> items) {
+		int number = r.nextInt(MAX_NUMBER);
+		return (number < Integer.parseInt(items.get(Size.S.toString()))) ? Size.S
+				: (number < Integer.parseInt(items.get(Size.S.toString())) + 
+						Integer.parseInt(items.get(Size.M.toString()))) ? Size.M : Size.L;
+	}
 }

@@ -1,9 +1,11 @@
 package com.tubi.space.track.domain;
 
+import java.io.Serializable;
+
 import lombok.Data;
 
 @Data
-public class Satellite {
+public class Satellite implements Serializable {
 	private String ORDINAL;
 	private String COMMENT;
 	private String ORIGINATOR;
