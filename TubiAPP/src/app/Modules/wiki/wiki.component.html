@@ -1,1 +1,81 @@
-<p>wiki works!</p>
+<style>
+  #wiki {
+    background: black;
+    color:white;
+    padding-bottom: 35px;
+  }
+
+  .center {
+    text-align:center;
+  }
+
+  .colorBlue {
+    color:#15418c!important;
+  }
+
+  .wikiStyle {
+    width: 865px;
+    margin: auto;
+  }
+
+  .iconAcordeon {
+    float: right;
+    margin: -3px;
+  }
+
+  .hidden {
+    display:none;
+  }
+
+  .allAcordeonTitle {
+    padding: 8px;
+    margin: 8px;
+    border: 2px solid #15418c;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .allAcordeonTitle:hover {
+    border: 2px solid white;
+  }
+
+  .openedAcordion {
+    border: 2px solid white!important;
+  }
+
+  .descriptionAllElements {
+    padding: 8px;
+    margin: 8px;
+    background: #15418c;
+    border-radius: 5px;
+  }
+
+
+
+</style>
+
+
+<div id="wiki">
+  <h1 class="center colorBlue" style="text-align:center;">WIKI</h1>
+
+  <div class="wikiStyle">
+    <ng-container *ngFor="let item of questionAndAnwers; let i = index" >
+      <div (click)="openAccordion(item.icon , i)" class="allAcordeonTitle {{item.open}}">
+        {{item.titleAcordeon}}<img class="iconAcordeon" src="{{pathImage}}{{item.icon}}">
+      </div>
+      <div class="{{item.ocultar}} descriptionAllElements">
+        <p style="font-weight:bold;">{{item.elementTitle1}}</p>
+        <p style="margin-bottom: 10px;">{{item.elementDescripcion1}}</p>
+
+        <p style="font-weight:bold;">{{item.elementTitle2}}</p>
+        <p style="margin-bottom: 10px;">{{item.elementDescripcion2}}</p>
+
+        <p style="font-weight:bold;">{{item.elementTitle3}}</p>
+        <p style="margin-bottom: 10px;">{{item.elementDescripcion3}}</p>
+
+      </div>
+    </ng-container>
+  </div>
+
+
+</div>

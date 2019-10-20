@@ -1,5 +1,7 @@
 package com.tubi.space.track.config;
 
+import java.util.Map;
+
 import javax.sql.DataSource;
 
 import org.springframework.batch.core.Step;
@@ -20,7 +22,7 @@ import com.tubi.space.track.domain.Satellite;
 @EnableBatchProcessing
 public class BatchStepConfig {
 	
-	private static final String QUERY = "INSERT INTO DEBRIS (OBJECT_ID, OBJECT_NAME, RA_OF_ASC_NODE, MEAN_MOTION, TYPE, SIZE, SCALE) VALUES (:objectId, :objectName, :raOfAscNode, :meanMotion, :type, :size, :scale)";
+	private static final String QUERY = "INSERT INTO DEBRIS (OBJECT_ID, OBJECT_NAME, RA_OF_ASC_NODE, MEAN_MOTION, TYPE, SIZE, SCALE, INCLINATION) VALUES (:objectId, :objectName, :raOfAscNode, :meanMotion, :type, :size, :scale, :inclination)";
 	
 	@Bean
 	JdbcBatchItemWriter<Debris> jdbcWriter(DataSource datasource) {
@@ -32,14 +34,20 @@ public class BatchStepConfig {
 	}
 	
 	@Bean
+	Processor processor(Map<String, String> size, Map<String, String> type) {
+		return new Processor(size, type);
+	}
+	
+	@Bean
 	Step step(StepBuilderFactory stepBuilder,
+			Processor processor,
 			JdbcBatchItemWriter<Debris> writer,
 			RestConfig config,
 			OverwriteListener listener) {
 		return stepBuilder.get("DFJ_etl_step")
 				.<Satellite, Debris>chunk(100)
 				.reader(new RestItemReader(config))
-				.processor(new Processor())
+				.processor(processor)
 				.writer(writer)
 				.listener(listener)
 				.build();
