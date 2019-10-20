@@ -1,5 +1,8 @@
 package com.tubi.space.track.utils;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -13,8 +16,10 @@ public class Utils {
 	
 	public static float randomizeScale() {
 		float rangeMin = 0.8f,
-			rangeMax = 1.0f;		
-	    return rangeMin + (rangeMax - rangeMin) * r.nextFloat();
+			rangeMax = 1.0f;
+	    return BigDecimal.valueOf(rangeMin + (rangeMax - rangeMin) * r.nextFloat())
+				.round(new MathContext(2, RoundingMode.HALF_UP))
+				.floatValue();
 	}
 	
 	public TYPE calculateType(HashMap<String, String> items) {
