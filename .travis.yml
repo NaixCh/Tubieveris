@@ -3,3 +3,7 @@ jdk:
   - openjdk8
 before_script:
   - cd space.track
+notifications:
+    email:
+        on_success: change # default: change
+        on_failure: always # default: always
