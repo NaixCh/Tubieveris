@@ -1,5 +1,0 @@
-language: java
-jdk:
-  - openjdk8
-before_script:
-  - cd space.track
